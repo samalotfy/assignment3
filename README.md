@@ -69,13 +69,6 @@ Design decisions:
 - **Instant UI updates:** `ValueListenableBuilder` listens to `favoritesBox`, so stars and the Favorites screen rebuild automatically whenever it changes.
 
 
-## How to Run
-
-```bash
-flutter pub get
-dart run build_runner build --delete-conflicting-outputs
-flutter run
-```
 
 Dependencies (`pubspec.yaml`): `http`, `hive`, `hive_flutter`, `connectivity_plus`; dev dependencies: `hive_generator`, `build_runner`.
 
@@ -89,22 +82,26 @@ Dependencies (`pubspec.yaml`): `http`, `hive`, `hive_flutter`, `connectivity_plu
 ## Screenshots
 
 ### 1. Posts loaded from the API
-![Posts online](screenshots/01_posts_online.png)
+![Posts online](screenshots/1_posts_online.png)
 
 ### 2. Marking posts as favorites (filled star)
-![Favorite toggle](screenshots/02_favorite_toggle.png)
+![Favorite toggle](screenshots/2_favorite_toggle.png)
 
 ### 3. Favorites screen
-![Favorites screen](screenshots/03_favorites_screen.png)
+![Favorites screen](screenshots/3_favorites_screen.png)
 
 ### 4. Empty favorites state ("No favorites yet")
-![Empty favorites](screenshots/04_empty_favorites.png)
+![Empty favorites](screenshots/4_empty_favorites.png)
 
 ### 5. Offline mode: posts loaded from Hive
-![Posts offline](screenshots/05_posts_offline.png)
+![Posts offline](screenshots/5_posts_offline.png)
 
 ### 6. Offline mode: favorites still saved after restart
-![Favorites offline](screenshots/06_favorites_offline.png)
+![Favorites offline](screenshots/6_favorites offline.png)
+
+
+### 7. Offline mode: posts screen when offline and no cache
+![Posts offline](screenshots/7_offline with no cache.png)
 
 ## Technologies
 
