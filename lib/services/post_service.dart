@@ -10,14 +10,12 @@ class PostService {
     var box = await Hive.openBox<Post>('postsBox');
 
     try {
-      // 1. Try to fetch online
       final response = await http.get(Uri.parse(apiUrl));
 
       if (response.statusCode == 200) {
         List<dynamic> data = json.decode(response.body);
         List<Post> onlinePosts = data.map((e) => Post.fromJson(e)).toList();
 
-        // 2. Save to Hive
         await box.clear();
         await box.addAll(onlinePosts);
 
@@ -28,7 +26,6 @@ class PostService {
       print('API Failed, reason: $e');
     }
 
-    // 3. OFFLINE MODE: return from Hive (works in airplane mode)
     if (box.isNotEmpty) {
       print('Loaded from Hive offline: ${box.length}');
       return box.values.toList();
