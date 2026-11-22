@@ -1,22 +1,9 @@
-# Offline Posts App with Favorites (Flutter + Hive)
-
-**Course:** [Course name] | Fall 2026 | Section 5
-**Student:** [Your name] | **ID:** [Your ID]
+# Offline Posts App with Favorites
 
 ## Overview
 
 A Flutter app that shows posts from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/posts) and stores them locally with **Hive**, a lightweight NoSQL database written in pure Dart. The app keeps working without internet by showing the last saved data. Users can also mark posts as **favorites**, which are saved in their own Hive box so they survive refreshes and app restarts.
 
-## Features
-
-- Fetch posts from the API and cache them in Hive (`postsBox`)
-- Offline mode: when the API is unreachable, posts are loaded from Hive
-- Friendly error message when there is no internet and no cached data
-- Pull-to-refresh
-- Star button on every post: filled star for favorites, outlined star for the rest, updating instantly
-- Favorites screen opened from a heart button in the AppBar
-- "No favorites yet" message when there are no favorites
-- Favorites saved in a separate box (`favoritesBox`) so they persist offline
 
 ## Project Structure
 
@@ -74,10 +61,7 @@ Dependencies (`pubspec.yaml`): `http`, `hive`, `hive_flutter`, `connectivity_plu
 
 ## How to Test Offline Mode
 
-1. Run the app with internet. The posts load and the console prints "Loaded from API and cached to Hive".
-2. Tap the star on a few posts, then open the Favorites screen with the heart button to see them.
-3. Close the app completely and turn on airplane mode.
-4. Reopen the app. The posts load from Hive ("Loaded from Hive offline" in the console) and the favorites are still there.
+ Reopening the app after being in airplane mode the posts load from Hive ("Loaded from Hive offline" in the console) and the favorites are still there.
 
 ## Screenshots
 
@@ -97,11 +81,11 @@ Dependencies (`pubspec.yaml`): `http`, `hive`, `hive_flutter`, `connectivity_plu
 ![Posts offline](screenshots/5_posts_offline.png)
 
 ### 6. Offline mode: favorites still saved after restart
-![Favorites offline](screenshots/6_favorites offline.png)
+![Favorites offline](screenshots/6_favorites_offline.png)
 
 
 ### 7. Offline mode: posts screen when offline and no cache
-![Posts offline](screenshots/7_offline with no cache.png)
+![Posts offline](screenshots/7_offline_with_no_cache.png)
 
 ## Technologies
 
